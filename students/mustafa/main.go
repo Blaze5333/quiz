@@ -93,15 +93,15 @@ func checkAnswer(question string, answer string, input <-chan string, timer <-ch
 }
 
 func init() {
-	flag.Int("time", 12, "Time limit for all questions in seconds")
+	flag.Int("time", 30, "Time limit for all questions in seconds")
 	flag.Int("s", 0, "Shuffle the question order (default: 0)")
 	flag.Parse()
 	fmt.Println("no. of flags", flag.NFlag())
 	if flag.NFlag() == 0 {
-		fmt.Println("No flags provided. Using default time limit of 12 seconds.")
+		fmt.Println("No flags provided. Using default time limit of 30 seconds.")
 	}
 	if flag.Lookup("time") == nil {
-		fmt.Println("No time flag provided. Using default time limit of 12 seconds.")
+		fmt.Println("No time flag provided. Using default time limit of 30 seconds.")
 	} else {
 		fmt.Println("Time limit set to:", flag.Lookup("time").Value)
 	}
